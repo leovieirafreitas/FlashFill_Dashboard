@@ -13,9 +13,10 @@ import {
 
 export interface LicenseEmailProps {
   licenseKey: string;
+  downloadUrl: string;
 }
 
-export const LicenseEmail = ({ licenseKey }: LicenseEmailProps) => {
+export const LicenseEmail = ({ licenseKey, downloadUrl }: LicenseEmailProps) => {
   return (
     <Html>
       <Head />
@@ -37,8 +38,14 @@ export const LicenseEmail = ({ licenseKey }: LicenseEmailProps) => {
             </Section>
             
             <Text style={text}>
-              Para ativar, basta abrir a extensão no seu After Effects, clicar em "Ativar Licença" e colar a chave acima junto com este e-mail.
+              Para ativar, basta instalar a extensão e colar a chave acima. Baixe o instalador oficial clicando no botão abaixo:
             </Text>
+
+            <Section style={btnContainer}>
+              <Link href={downloadUrl} style={button}>
+                Baixar Instalador FlashFill
+              </Link>
+            </Section>
 
             <Hr style={hr} />
             <Text style={footer}>
@@ -130,4 +137,22 @@ const footer = {
   fontSize: '14px',
   lineHeight: '22px',
   margin: '0',
+};
+
+const btnContainer = {
+  textAlign: 'center' as const,
+  marginTop: '32px',
+  marginBottom: '32px',
+};
+
+const button = {
+  backgroundColor: '#7c3aed',
+  borderRadius: '8px',
+  color: '#fff',
+  fontSize: '16px',
+  fontWeight: 'bold',
+  textDecoration: 'none',
+  textAlign: 'center' as const,
+  display: 'inline-block',
+  padding: '14px 28px',
 };

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { supabase, type License } from '@/lib/supabase'
 import {
   Zap, Key, Users, CheckCircle, XCircle, RefreshCw,
-  Plus, Search, LogOut, Copy, Trash2, RotateCcw, Shield
+  Plus, Search, LogOut, Copy, Trash2, RotateCcw, Shield, Download
 } from 'lucide-react'
 
 function generateKey() {
@@ -252,6 +252,10 @@ export default function DashboardPage() {
             className="flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors">
             <Plus size={15} /> Nova Licença
           </button>
+          <a href="/FlashFill_Installer.exe" download
+            className="flex items-center gap-2 bg-[#1a1a2e] border border-purple-500/30 hover:border-purple-500 hover:bg-purple-500/10 text-purple-400 text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors">
+            <Download size={15} /> Baixar Instalador
+          </a>
         </div>
 
         {/* Table */}

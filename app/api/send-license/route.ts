@@ -18,7 +18,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'RESEND_API_KEY não configurada no servidor.' }, { status: 500 });
     }
 
-    const html = await render(React.createElement(LicenseEmail, { licenseKey }));
+    // Identificar a URL base do site para gerar o link de download
+    const host = req.headers.get('host') || 'localhost:3000';
+    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const downloadUrl = `${protocol}://${host}/FlashFill_Installer.exe`;
+
+    const html = await render(React.createElement(LicenseEmail, { licenseKey, downloadUrl }));
 
     const { data, error } = await resend.emails.send({
       from: 'FlashFill <onboarding@resend.dev>', // Usar o email de onboarding para contas novas

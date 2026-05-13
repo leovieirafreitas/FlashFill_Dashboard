@@ -38,7 +38,11 @@ export const LicenseEmail = ({ licenseKey, downloadUrl }: LicenseEmailProps) => 
             </Section>
             
             <Text style={text}>
-              Para ativar, basta instalar a extensão e colar a chave acima. Baixe o instalador oficial clicando no botão abaixo:
+              <strong>Passo a passo para ativar:</strong><br/><br/>
+              1. Baixe o instalador oficial clicando no botão abaixo.<br/>
+              2. Instale o plugin no seu computador (lembre-se que pode ser necessário aceitar permissões de administrador).<br/>
+              3. Abra o After Effects, acesse a janela do FlashFill.<br/>
+              4. Insira este e-mail e a chave acima para concluir a ativação.
             </Text>
 
             <Section style={btnContainer}>

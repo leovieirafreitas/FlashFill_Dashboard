@@ -9,6 +9,7 @@ import {
   Section,
   Text,
   Hr,
+  Link,
 } from '@react-email/components';
 
 export interface LicenseEmailProps {
